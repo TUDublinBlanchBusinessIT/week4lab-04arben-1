@@ -6,10 +6,15 @@ export default function App() {
   
   const [sswd, setSswd] = useState('D');
   const [ob, setOb] = useState('D');
+  const [mobileApps, setMobileApps] = useState('D');
+  const [digitalMarketing, setDigitalMarketing] = useState('D');
+  const [ooad, setOoad] = useState('D');
+  const [financialManagement, setFinancialManagement] = useState('D');
+
   
   var gpa=0;
   var credits=5;
-  var totalPossibleCredits = 10;
+  var totalPossibleCredits = 30;
   var totalGradeScores = 0;
   
   function clickMe() {
@@ -19,6 +24,13 @@ export default function App() {
     
     totalGradeScores += gradePoints[sswd.toUpperCase()] * credits;
     totalGradeScores += gradePoints[ob.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[sswd.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[ob.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[mobileApps.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[digitalMarketing.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[ooad.toUpperCase()] * credits;
+    totalGradeScores += gradePoints[financialManagement.toUpperCase()] * credits;
+
     gpa = totalGradeScores / totalPossibleCredits;
 
     
@@ -78,7 +90,44 @@ return (
         style={styles.textInput}
       />
     </View>
+    <View style={styles.row}>
+      <Text style={styles.label}>Mobile Apps</Text>
+      <TextInput
+        placeholder="Grade"
+        onChangeText={setMobileApps}
+        style={styles.textInput}
+      />
+    </View>
 
+    <View style={styles.row}>
+      <Text style={styles.label}>Digital Marketing</Text>
+      <TextInput
+        placeholder="Grade"
+        onChangeText={setDigitalMarketing}
+        style={styles.textInput}
+      />
+    </View>
+
+    <View style={styles.row}>
+      <Text style={styles.label}>OOAD</Text>
+      <TextInput
+        placeholder="Grade"
+        onChangeText={setOoad}
+        style={styles.textInput}
+      />
+    </View>
+
+    <View style={styles.row}>
+      <Text style={styles.label}>Financial Management</Text>
+      <TextInput
+        placeholder="Grade"
+        onChangeText={setFinancialManagement}
+        style={styles.textInput}
+      />
+    </View>
+
+   
+  
     <View style={styles.row}>
       <Button title="Submit" onPress={clickMe} />
     </View>
